@@ -46,7 +46,7 @@ pipeline {
     }
     stage('Deploy') {
       steps {
-        sh "cat docker compose.prod.yml"
+        sh "cat docker-compose.prod.yml"
         sh "echo 'DOCKERHUB_USER=${DOCKERHUB_USER}' > .env"
         sh "echo 'BUILD_TIMESTAMP=${BUILD_TIMESTAMP}' >> .env"
         sh "cat .env"

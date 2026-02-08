@@ -11,9 +11,11 @@ pipeline {
       steps {
 //        sh "test -f ~/.docker/config.json"
 //        sh "cat ~/.docker/config.json | grep docker.io"
+         sh '''
          echo "HOME=$HOME"
          test -f "$HOME/.docker/config.json"
          grep -q docker.io "$HOME/.docker/config.json"
+         '''
       }
     }
     stage('Build') {
